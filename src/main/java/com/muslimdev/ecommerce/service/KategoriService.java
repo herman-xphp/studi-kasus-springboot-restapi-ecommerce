@@ -12,15 +12,27 @@ import com.muslimdev.ecommerce.repository.KategoriRepository;
 @Service
 public class KategoriService {
 
-    @Autowired
-    private KategoriRepository kategoriRepository;
+  @Autowired
+  private KategoriRepository kategoriRepository;
 
-    public Kategori findById(String id) {
-        return kategoriRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Kategori dengan id " + id + " tidak ditemukan."));
-    }
+  public Kategori findById(String id) {
+    return kategoriRepository.findById(id)
+        .orElseThrow(() -> new ResourceNotFoundException("Kategori dengan id " + id + " tidak ditemukan."));
+  }
 
-    public List<Kategori> findAll() {
-        return kategoriRepository.findAll();
-    }
+  public List<Kategori> findAll() {
+    return kategoriRepository.findAll();
+  }
+
+  public Kategori create(Kategori kategori) {
+    return kategoriRepository.save(kategori);
+  }
+
+  public Kategori edit(Kategori kategori) {
+    return kategoriRepository.save(kategori);
+  }
+
+  public void deleteById(String id) {
+    kategoriRepository.deleteById(id);
+  }
 }
