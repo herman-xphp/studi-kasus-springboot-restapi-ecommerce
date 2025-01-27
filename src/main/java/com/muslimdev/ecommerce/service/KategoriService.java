@@ -1,6 +1,7 @@
 package com.muslimdev.ecommerce.service;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,7 @@ public class KategoriService {
   }
 
   public Kategori create(Kategori kategori) {
+    kategori.setId(UUID.randomUUID().toString());
     return kategoriRepository.save(kategori);
   }
 

@@ -1,7 +1,6 @@
 package com.muslimdev.ecommerce.controller;
 
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -35,7 +34,6 @@ public class KategoriController {
 
     @PostMapping("/kategoris")
     public Kategori create(@RequestBody Kategori kategori) {
-        kategori.setId(UUID.randomUUID().toString());
         return kategoriService.create(kategori);
     }
 
