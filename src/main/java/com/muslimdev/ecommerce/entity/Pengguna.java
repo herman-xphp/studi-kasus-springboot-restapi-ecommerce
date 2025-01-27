@@ -2,6 +2,8 @@ package com.muslimdev.ecommerce.entity;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
@@ -14,6 +16,7 @@ public class Pengguna implements Serializable {
     private String id;
     private String nama;
     private String email;
+    @JsonIgnore
     private String password;
     private String alamat;
     private String hp;
